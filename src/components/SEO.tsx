@@ -13,7 +13,7 @@ const SEO: React.FC<SeoProps> = ({
   twitterTitle,
   twitterDescription,
   twitterImage,
-  jsonLd,
+  // jsonLd,
 }) => {
   return (
     <Head>
@@ -40,16 +40,32 @@ const SEO: React.FC<SeoProps> = ({
       {twitterImage && <meta name="twitter:image" content={twitterImage} />}
 
       {/* Structured Data (JSON-LD) */}
-      {jsonLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd),
+            __html: JSON.stringify(orgJsonLd),
           }}
         />
-      )}
     </Head>
   );
 };
+  // Example of structured data for an organization
+  const orgJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Your Company Name",
+    url: "https://www.yourwebsite.com",
+    logo: "https://www.yourwebsite.com/logo.png",
+    contactPoint: {
+      "@type": "ContactPoint",
+      telephone: "+1-123-456-7890",
+      contactType: "Customer service",
+    },
+    sameAs: [
+      "https://www.facebook.com/yourcompany",
+      "https://www.twitter.com/yourcompany",
+      "https://www.linkedin.com/company/yourcompany",
+    ],
+  };
 
 export default SEO;
