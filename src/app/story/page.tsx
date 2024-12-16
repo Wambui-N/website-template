@@ -13,9 +13,15 @@ export default function OurStory() {
         ogImage="https://www.yourwebsite.com/about-og-image.jpg"
       />
       <main>
-        {/* Page content */}
-        <h1>About Us</h1>
-        <p>Welcome to our company...</p>
+      <div className="container mx-auto px-4 ">
+          <div className="py-32 text-center">
+            <h1 className="mb-4 text-4xl font-bold">Welcome to Our Services</h1>
+            <p className="text-xl text-gray-600">
+              We offer a wide range of professional services to help your
+              business grow.
+            </p>
+          </div>
+        </div>
       </main>
     </>
   );

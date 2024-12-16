@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { Menu, X } from 'lucide-react'
 
 const menuItems = [
@@ -19,8 +19,8 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      <div className="responsive">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
             <Link href="/" className="text-2xl font-bold text-gray-800">
@@ -35,14 +35,14 @@ export default function Navbar() {
                   href={item.href}
                   className={`relative px-3 py-2 rounded-md text-sm font-medium ${
                     pathname === item.href
-                      ? 'text-blue-600'
-                      : 'text-gray-600 hover:text-blue-600'
+                      ? 'text-zinc-950'
+                      : 'text-zinc-600 hover:text-zinc-950'
                   }`}
                 >
                   {item.label}
                   {pathname === item.href && (
                     <motion.div
-                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-blue-600"
+                      className="absolute bottom-0 left-0 right-0 h-0.5 bg-zinc-950"
                       layoutId="underline"
                     />
                   )}
