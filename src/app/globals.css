@@ -5,13 +5,13 @@
 /* Theme Colors */
 :root {
   /* Light neutral background */ /* Dark gray for text */
-  --background: #f3f4f6;
-  --foreground: #09090b ;
-  --primary: #3b82f6; /* Simple blue */
-  --secondary: #22c55e; /* Simple green */
-  --accent: #f97316; /* Simple orange */
-  --muted: #6b7280; /* Neutral gray for muted text */
-  --border: #d1d5db; /* Light border gray */
+  --background: #F5F5F5;
+  --foreground: #020C12 ;
+  --primary: #81c4ee; /* Simple blue */
+  --secondary: #B3F9E2; /* Simple green */
+  --accent: #FF7F11; /* Simple orange */
+  --muted: #5C5C5C; /* Neutral gray for muted text */
+  --border: #cccccc; /* Light border gray */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -79,7 +79,7 @@
     @apply border-border;
   }
   body {
-    @apply mx-4 bg-[var(--background)] font-sans text-[var(--foreground)] antialiased;
+    @apply mx-4 bg-white text-black antialiased;
     font-family: "Satoshi", Arial, sans-serif;
   }
   main {
@@ -91,19 +91,20 @@
   h1,
   h2,
   h3 {
-    @apply mb-4 font-bold text-[var(--foreground)];
+    @apply mb-4 font-bold text-black tracking-wider uppercase;
+    font-family: "Glaro", Arial, sans-serif;
   }
 
   h1 {
-    @apply text-4xl md:text-5xl;
-  }
-
-  h2 {
     @apply text-3xl md:text-4xl;
   }
 
-  h3 {
+  h2 {
     @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl;
   }
 
   p {

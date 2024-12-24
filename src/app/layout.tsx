@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/navbars/Navbar";
+import Navbar3 from "@/components/layout/navbars/Navbar3";
+
+const glaro = localFont({
+  src: "./fonts/ZTGloraPro-Regular.ttf"
+})
 
 const satoshi = localFont({
   src: [
@@ -31,7 +36,7 @@ const satoshi = localFont({
       style: "normal",
     },
   ],
-  // add a fallback font
+  // TODO: add a fallback font
 });
 
 export const metadata: Metadata = {
@@ -65,7 +70,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={satoshi.className}>
-        <Navbar />
+        {/* <Navbar /> */}
+        <Navbar3 />
         {children}</body>
     </html>
   );

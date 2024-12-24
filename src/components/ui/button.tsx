@@ -39,24 +39,26 @@ export interface ButtonProps
   asChild?: boolean;
   title: string; // Add a title prop
   icon?: React.ReactNode; // Optional icon prop
+  href?: string; // Optional href prop for link functionality
 }
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, title, icon, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
+const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, title, icon, href, ...props }, ref) => {
+    const Comp = asChild ? Slot : href ? "a" : "button";
 
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
+        ref={ref as any} // Type adjustment for mixed ref usage
+        {...(href ? { href } : {})} // Add href if provided
         {...props}
       >
         <span className="relative inline-flex overflow-hidden">
           {/* Animated title effect */}
-          <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[110%] group-hover:skew-y-12">
+          <div className="translate-y-0 skew-y-0 transition duration-500 group-hover:-translate-y-[130%] group-hover:skew-y-12">
             {title}
           </div>
-          <div className="absolute translate-y-[135%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
+          <div className="absolute translate-y-[165%] skew-y-12 transition duration-500 group-hover:translate-y-0 group-hover:skew-y-0">
             {title}
           </div>
           {/* Optional icon */}
