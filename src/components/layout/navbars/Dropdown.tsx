@@ -98,9 +98,9 @@ const DropDown = () => {
             ))}
             <Link
               href="/signup"
-              className="flex flex-row items-center justify-end py-2 text-2xl font-medium uppercase text-white"
+              className="flex flex-row gap-2 items-center justify-end py-2 text-2xl font-medium uppercase text-white"
             >
-              Join the Community <ArrowUpRight color="#81c4ee" />
+              Join the Community <ArrowUpRight size={32} color="#81c4ee" />
             </Link>
           </motion.div>
         )}

@@ -1,4 +1,8 @@
+import { Timeline } from "@/components/our-story/timeline";
+import { Values } from "@/components/our-story/values";
+import { OurMission } from "@/components/our-story/our-mission";
 import SEO from "@/components/SEO";
+import { TeamSection } from "@/components/our-story/team-section";
 
 export default function OurStory() {
 
@@ -12,16 +16,25 @@ export default function OurStory() {
         ogDescription="Discover the story behind our innovative solutions"
         ogImage="https://www.yourwebsite.com/about-og-image.jpg"
       />
-      <main>
-      <div className="container mx-auto px-4 ">
-          <div className="py-32 text-center">
-            <h1 className="mb-4 text-4xl font-bold">Welcome to Our Services</h1>
-            <p className="text-xl text-gray-600">
-              We offer a wide range of professional services to help your
-              business grow.
-            </p>
+      <main className="flex-1 responsive">
+        {/* Hero Section */}
+        <section className="relative bg-muted/40 py-24">
+          <div className="container">
+            <div className="max-w-2xl">
+              <h1 className="mb-6">Our Story</h1>
+              <p className="text-xl text-muted-foreground">
+                Building a community where healthcare experiences are shared,
+                understood, and valued. Together, we're making healthcare more
+                human.
+              </p>
+            </div>
           </div>
-        </div>
+        </section>
+
+        <OurMission />
+        <Values />
+        <Timeline />
+        <TeamSection />
       </main>
     </>
   );

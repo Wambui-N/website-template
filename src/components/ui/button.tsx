@@ -37,7 +37,7 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
-  title: string; // Add a title prop
+  title?: string; // Add a title prop
   icon?: React.ReactNode; // Optional icon prop
   href?: string; // Optional href prop for link functionality
 }

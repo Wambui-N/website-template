@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "@/components/layout/navbars/Navbar";
+import Navbar2 from "@/components/layout/navbars/Navbar3";
 import Navbar3 from "@/components/layout/navbars/Navbar3";
 
 const glaro = localFont({
