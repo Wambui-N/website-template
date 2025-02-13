@@ -1,11 +1,12 @@
-import { Timeline } from "@/components/our-story/timeline";
-import { Values } from "@/components/our-story/values";
-import { OurMission } from "@/components/our-story/our-mission";
 import SEO from "@/components/SEO";
-import { TeamSection } from "@/components/our-story/team-section";
+import HomeNav from "@/components/layout/navbars/homeNav";
+import Welcome from "@/components/sections/welcome";
+import FoundersInspo from "@/components/sections/foundersInspo";
+import WhoWeAre from "@/components/sections/whoWeAre";
+import TalkingPoints from "@/components/sections/talkingPoints";
+import Footer from "@/components/layout/footer";
 
 export default function OurStory() {
-
   return (
     <>
       <SEO
@@ -16,25 +17,23 @@ export default function OurStory() {
         ogDescription="Discover the story behind our innovative solutions"
         ogImage="https://www.yourwebsite.com/about-og-image.jpg"
       />
-      <main className="flex-1 responsive">
+      <main className="">
+        <HomeNav />
+
         {/* Hero Section */}
-        <section className="relative bg-muted/40 py-24">
-          <div className="container">
-            <div className="max-w-2xl">
-              <h1 className="mb-6">Our Story</h1>
-              <p className="text-xl text-muted-foreground">
-                Building a community where healthcare experiences are shared,
-                understood, and valued. Together, we're making healthcare more
-                human.
-              </p>
+        <section className="relative flex h-screen flex-col items-end justify-end bg-hero-bg bg-cover pb-12 pt-24 lg:h-[50vh]">
+          <div className="responsive">
+            <div className="place-items-start">
+              <h1 className="text-6xl capitalize">Our Story</h1>
             </div>
           </div>
         </section>
 
-        <OurMission />
-        <Values />
-        <Timeline />
-        <TeamSection />
+        <Welcome />
+        <FoundersInspo />
+        <WhoWeAre />
+        <TalkingPoints />
+        <Footer />
       </main>
     </>
   );

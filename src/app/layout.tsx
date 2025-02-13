@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/layout/navbars/Navbar";
-import Navbar2 from "@/components/layout/navbars/Navbar3";
-import Navbar3 from "@/components/layout/navbars/Navbar3";
+import { AuthProvider } from "./lib/utils/authContext";
+import Navigation from "@/components/layout/navbars/navigation";
 
 const glaro = localFont({
-  src: "./fonts/ZTGloraPro-Regular.ttf"
-})
+  src: "./fonts/ZTGloraPro-Regular.ttf",
+});
 
 const satoshi = localFont({
   src: [
@@ -41,15 +40,17 @@ const satoshi = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Your Project Name | Creative Web Solutions",
-  description: "High-quality web design services optimized for conversions and SEO.",
+  title: "Wellness Dialogues",
+  description:
+    "High-quality web design services optimized for conversions and SEO.",
   keywords: ["Web Design", "SEO", "Conversions", "Satoshi Font", "Next.js"],
   icons: {
     icon: "/favicon.ico",
   },
   openGraph: {
-    title: "Your Project Name",
-    description: "High-quality web design services optimized for conversions and SEO.",
+    title: "Wellness Dialogues",
+    description:
+      "High-quality web design services optimized for conversions and SEO.",
     url: "https://yourwebsite.com",
     type: "website",
     images: [
@@ -57,7 +58,7 @@ export const metadata: Metadata = {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Your Project Name",
+        alt: "Wellness Dialogues",
       },
     ],
   },
@@ -71,9 +72,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={satoshi.className}>
-        {/* <Navbar /> */}
-        <Navbar3 />
-        {children}</body>
+        <AuthProvider>
+          <Navigation />
+          {children}
+        </AuthProvider>
+      </body>
     </html>
   );
 }
